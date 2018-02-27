@@ -48,7 +48,7 @@ end
 post '/send_money' do
   to = Client.get_pub_key(params['to'])
   amount = params['amount'].to_i
-  $BLOCKCHAIN.add_to_chain(Transaction.new(PUB_KEY, to, amount, PRIV_KEY)) # TODO: sign txn's with pub_key.
+  $BLOCKCHAIN.add_to_chain(Transaction.new(PUB_KEY, to, amount, PRIV_KEY))
   'OK. Block mined!'
 end
 

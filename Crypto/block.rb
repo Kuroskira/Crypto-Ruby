@@ -13,7 +13,7 @@ class Block
     genesis_txn = Transaction.new(nil, pub_key, 500_000, priv_key)
     Block.new(nil, genesis_txn)
   end
-  
+
   # Initialize Block. If it's genesis block we don't have previous hash
   def initialize(prev_block, txn)
     raise TypeError unless txn.is_a?(Transaction)
