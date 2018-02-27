@@ -1,6 +1,6 @@
 class Transaction
   attr_reader :from, :to, :amount
-  
+
   def initialize(from, to, amount, priv_key)
     @from = from
     @to = to

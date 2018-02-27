@@ -7,7 +7,7 @@ class PKI
     private_key, public_key = key_pair.export, key_pair.public_key.export
   end
 
-  def self.sign(plaintext, raw_private_key)
+  def self.sign(plaintext, raw_private_key) # TODO: sign txn's with pub_key.
     private_key = OpenSSL::PKey::RSA.new(raw_private_key)
     Base64.encode64(private_key.private_encrypt(plaintext))
   end
@@ -21,3 +21,6 @@ class PKI
     message == plaintext(ciphertext, public_key)
   end
 end
+
+key_pair = OpenSSL::PKey::RSA.new(2048)
+private_key, public_key = key_pair.export, key_pair.public_key.export
