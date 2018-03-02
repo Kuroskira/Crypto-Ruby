@@ -55,3 +55,8 @@ end
 get '/pub_key' do
   PUB_KEY
 end
+
+get '/block' do
+  index = params['block'].to_i
+  $BLOCKCHAIN.blocks[index]
+end

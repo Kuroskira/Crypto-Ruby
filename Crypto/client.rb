@@ -18,4 +18,8 @@ class Client
   def self.send_money(port, to, amount)
     Faraday.post("#{URL}:#{port}/send_money", to: to, amount: amount).body
   end
+
+  def self.get_block_info(port, block)
+    Faraday.get("#{URL}:#{port}/block", block: block).body
+  end
 end
