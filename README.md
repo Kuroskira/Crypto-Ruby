@@ -1,3 +1,3 @@
 # Crypto-Ruby
 
-Simple Blockchain using Ruby for learn purposes.
+Simple Blockchain using Ruby for learning purposes.
